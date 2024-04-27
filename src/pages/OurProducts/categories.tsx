@@ -1,4 +1,6 @@
 import { GoDownload } from "react-icons/go";
+import { AiFillSound } from "react-icons/ai";
+import { useRef, useState } from "react";
 
 export const Categories = () => {
   const _categories = [
@@ -60,6 +62,18 @@ export const Categories = () => {
     },
   ];
 
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(new Audio("audio/muzik.m4a"));
+
+  const togglePlay = () => {
+    const audio = audioRef.current;
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
   return (
     <>
       <div className="w-full">
@@ -115,7 +129,7 @@ export const Categories = () => {
               </div>
             ))}
           </div>
-          <div className="w-full flex items-end justify-end mt-8">
+          <div className="w-full flex items-center justify-end mt-8 gap-3">
             <a
               className="text-white bg-ff91a4 py-2 px-8 rounded-3xl font-medium flex items-center justify-center gap-2"
               download
@@ -127,6 +141,12 @@ export const Categories = () => {
                 <GoDownload className="text-white text-lg" />
               </div>
             </a>
+            <button
+              onClick={togglePlay}
+              className="text-white bg-ff91a4 p-2 rounded-3xl font-medium flex items-center justify-center gap-2"
+            >
+              <AiFillSound />
+            </button>
           </div>
         </div>
         <div className="relative mt-40">

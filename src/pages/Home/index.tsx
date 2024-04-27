@@ -7,7 +7,7 @@ export const Home: React.FC = () => {
 
   return (
     <div className="overflow-auto overflow-x-hidden">
-      <div className="relative p-4 z-10 w-full bg-5fcac7 max-h-[720px]">
+      <div className="relative p-4 z-10 w-full bg-5fcac7">
         <div
           className="select-none absolute w-full h-full top-0 left-0 bg-contain bg-top opacity-20 -z-10"
           style={{ backgroundImage: "url(images/header-bg.png)" }}
