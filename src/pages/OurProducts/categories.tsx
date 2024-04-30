@@ -29,7 +29,7 @@ export const Categories = () => {
     },
   ];
 
-  const _produsct = [
+  const _products = [
     {
       title: "Pandispanya",
       description: "Pandispanya karakteristiktir.",
@@ -62,7 +62,7 @@ export const Categories = () => {
     },
   ];
 
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false); // true ya da false
   const audioRef = useRef(new Audio("audio/muzik.m4a"));
 
   const togglePlay = () => {
@@ -72,13 +72,19 @@ export const Categories = () => {
     } else {
       audio.play();
     }
+    /**
+     * isPlaying = false
+     * ise
+     * !isPlaying = true // değerine eşittir
+     */
     setIsPlaying(!isPlaying);
   };
+
   return (
     <>
-      <div className="w-full">
-        <div className="flex flex-col lg:w-2/4 mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-10 justify-around">
+      <div className="w-full flex flex-col items-center">
+        <div className="flex flex-col lg:w-2/4 justify-center">
+          <div className="flex flex-col lg:flex-row items-center gap-10 justify-center">
             {_categories.map((category) => {
               return (
                 <div
@@ -109,8 +115,8 @@ export const Categories = () => {
               );
             })}
           </div>
-          <div className="w-full grid lg:grid-cols-2 grid-flow-row gap-14 mt-20 text-start px-5 lg:px-0">
-            {_produsct.map((product, i) => (
+          <div className="mt-20 grid grid-flow-row lg:grid-cols-2 gap-y-6 gap-x-14 text-start px-5 lg:px-0">
+            {_products.map((product, i) => (
               <div
                 key={i}
                 className="flex justify-between items-start border-b-2 border-dashed"
@@ -129,7 +135,7 @@ export const Categories = () => {
               </div>
             ))}
           </div>
-          <div className="w-full flex items-center justify-end mt-8 gap-3">
+          <div className="w-full flex items-center justify-end mt-8 gap-3 px-5 lg:px-0">
             <a
               className="text-white bg-ff91a4 py-2 px-8 rounded-3xl font-medium flex items-center justify-center gap-2"
               download
@@ -149,7 +155,7 @@ export const Categories = () => {
             </button>
           </div>
         </div>
-        <div className="relative mt-40">
+        <div className="relative mt-40 w-full">
           <div className="absolute w-full lg:h-96 h-40 top-0 left-0 bg-black/40"></div>
           <video
             className="object-cover w-full lg:h-96 h-40"

@@ -69,7 +69,10 @@ export const Home: React.FC = () => {
               Şubelerimiz
             </h1>
             <h1 className="text-black/80">Türkiye Şubelerimiz</h1>
-            <button className="mt-4 text-white rounded-3xl py-2 px-4 bg-5fcac7 font-medium">
+            <button
+              onClick={() => changePage("contact-us")}
+              className="mt-4 text-white rounded-3xl py-2 px-4 bg-5fcac7 font-medium"
+            >
               Şubelerimiz
             </button>
           </div>
@@ -81,7 +84,10 @@ export const Home: React.FC = () => {
               Sipariş Ver
             </h1>
             <h1 className="text-black/80">Çeşitli Siparişler Verin</h1>
-            <button className="mt-4 text-white rounded-3xl py-2 px-4 bg-5fcac7 font-medium">
+            <button
+              onClick={() => changePage("our-products")}
+              className="mt-4 text-white rounded-3xl py-2 px-4 bg-5fcac7 font-medium"
+            >
               Sipariş
             </button>
           </div>

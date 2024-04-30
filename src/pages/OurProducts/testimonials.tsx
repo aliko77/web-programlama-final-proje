@@ -32,7 +32,7 @@ export const Testimonials = () => {
               Müşterilerimizden Gelen Yorumlar
             </h1>
           </div>
-          <div className="py-5 grid lg:grid-cols-3 gap-3 justify-center">
+          <div className="py-5 grid lg:grid-cols-3 gap-3">
             {_reviews.map((review, i) => (
               <div
                 key={i}
